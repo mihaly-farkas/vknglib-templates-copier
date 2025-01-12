@@ -1,0 +1,31 @@
+_templates_suffix: .jinja2
+
+_exclude:
+  - "~*"
+  - "*.py[co]"
+  - "__pycache__"
+  - ".bak"
+  - ".docs"
+  - ".git"
+  - ".github"
+  - ".local"
+  - ".svn"
+  - ".tmp"
+  - ".DS_Store"
+  - "copier.yaml"
+  - "copier.yml"
+  - "features"
+  - "requirements.txt"
+
+_envops:
+  keep_trailing_newline: true
+
+license_owner:
+  type: str
+  help: The owner of the license
+  default: "{{ license_owner }}"
+
+license_year_start:
+  type: int
+  help: The year the license starts (by default the current year, when the new Copier template is created)
+  default: 2025
