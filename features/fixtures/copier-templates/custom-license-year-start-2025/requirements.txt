@@ -1,0 +1,4 @@
+behave~=1.2.6
+PyHamcrest~=2.1.0
+copier~=9.4.1
+funcy~=2.0

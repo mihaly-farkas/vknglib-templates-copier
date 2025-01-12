@@ -1,0 +1,18 @@
+# Standard ignore rules
+.bak
+.generated
+.local
+.tmp
+reports
+build
+log.txt
+
+# IntelliJ project files
+.idea/inspectionProfiles
+.idea/*.xml
+*.iml
+out
+gen
+
+# GitHub
+.npmrc
