@@ -1,0 +1,53 @@
+name: "Pull Request Verifier"
+on:
+  pull_request:
+    types:
+      - opened
+      - edited
+      - reopened
+      - synchronize
+    branches:
+      - main
+concurrency:
+  group: ${{ github.repository }}-pull-request-verifier-${{ github.ref_name }}
+  cancel-in-progress: true
+jobs:
+  verify:
+    name: "Verify"
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: "Checkout the repository"
+        uses: actions/checkout@v4
+
+      - name: "Setup Python"
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+
+      - name: "Install dependencies"
+        run: |
+          # Bash script
+          pip install --requirement requirements.txt
+
+      - name: "Run tests"
+        run: |
+          # Bash script
+          git tag -f "@latest"
+          behave \
+            --exclude features/fixtures/.* \
+            --stop || true
+          
+          echo
+          echo
+          echo '------------------------------------------------'
+          
+          diff --recursive \
+            '--exclude=.release-please-manifest.json' \
+            '--exclude=.tmp' \
+            '--exclude=CHANGELOG.md' \
+            .tmp features/fixtures/copier-templates
+          
+      
