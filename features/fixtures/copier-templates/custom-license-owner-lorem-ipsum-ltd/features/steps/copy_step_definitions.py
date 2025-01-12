@@ -43,8 +43,8 @@ def step_impl(context, template, target_dir):
     subprocess.run(
         command,
         check=True,
-        stdout=subprocess.DEVNULL,
-        stderr=subprocess.DEVNULL
+        #stdout=subprocess.DEVNULL,
+        #stderr=subprocess.DEVNULL
     )
 
 
