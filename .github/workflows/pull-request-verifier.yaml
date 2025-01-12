@@ -8,6 +8,7 @@ on:
       - synchronize
     branches:
       - main
+  workflow_dispatch:
 concurrency:
   group: ${{ github.repository }}-pull-request-verifier-${{ github.ref_name }}
   cancel-in-progress: true
