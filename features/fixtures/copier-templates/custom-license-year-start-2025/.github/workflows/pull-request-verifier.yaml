@@ -47,6 +47,8 @@ jobs:
           echo '------------------------------------------------'
           ls -al .tmp/custom-license-owner-john-doe
           echo '------------------------------------------------'
+          cat .tmp/custom-license-owner-john-doe/copier.yml
+          echo '------------------------------------------------'
           cat .tmp/custom-license-owner-john-doe/LICENSE
           echo '------------------------------------------------'
           
