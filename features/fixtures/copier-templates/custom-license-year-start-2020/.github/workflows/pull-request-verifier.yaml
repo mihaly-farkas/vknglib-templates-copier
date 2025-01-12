@@ -8,6 +8,7 @@ on:
       - synchronize
     branches:
       - main
+  workflow_dispatch:
 concurrency:
   group: ${{ github.repository }}-pull-request-verifier-${{ github.ref_name }}
   cancel-in-progress: true
@@ -37,8 +38,9 @@ jobs:
           # Bash script
           git tag -f "@latest"
           behave \
-            --exclude features/fixtures/.* \
-            --stop || true
+            --exclude features/fixtures/.* || true
+          
+          # --stop
           
           echo
           echo
