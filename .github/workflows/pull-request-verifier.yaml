@@ -38,7 +38,7 @@ jobs:
           git tag -f "@latest"
           behave \
             --exclude features/fixtures/.* \
-            --stop || true
+            --Xstop || true
           
           echo
           echo
