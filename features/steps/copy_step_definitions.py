@@ -38,13 +38,13 @@ def step_impl(context, template, target_dir):
         "copier", "copy", template, target_dir,
         *options,
         "--vcs-ref", "@latest",
-        "--defaults", "--force",
+        "--defaults", "--force", "--overwrite",
     ]
     subprocess.run(
         command,
         check=True,
-        #stdout=subprocess.DEVNULL,
-        #stderr=subprocess.DEVNULL
+        # stdout=subprocess.DEVNULL,
+        # stderr=subprocess.DEVNULL
     )
 
 
