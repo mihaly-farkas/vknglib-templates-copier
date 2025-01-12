@@ -45,6 +45,8 @@ jobs:
           echo
           echo
           echo '------------------------------------------------'
+          cat .tmp/custom-license-owner-john-doe/LICENSE
+          echo '------------------------------------------------'
           
           diff --recursive \
             '--exclude=.release-please-manifest.json' \
