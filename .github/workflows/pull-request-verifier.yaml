@@ -38,8 +38,9 @@ jobs:
           # Bash script
           git tag -f "@latest"
           behave \
-            --exclude features/fixtures/.* \
-            --Xstop || true
+            --exclude features/fixtures/.* || true
+          
+          # --stop
           
           echo
           echo
