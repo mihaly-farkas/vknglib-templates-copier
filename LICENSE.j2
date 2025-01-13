@@ -1,23 +1,6 @@
-{%  raw %}{#
-  The name of the file is tricky.
+MIT License
 
-  The
-  {% if true %}LICENSE{% endif %}.jinja2
-  file name will be rendered as
-  LICENSE.
-
-  This would work with the same result so far if we just use the
-  LICESE
-  file name without any other tricks.
-
-  However, in this case GitHub would automatically display the LICESE.jinja2 file in the repository licenses,
-  but that is not for the current repo, "just" a template for future generated repos.
-
-  So get the same result, but we still change the file name in _this_ repository.
-
-#}{% endraw %}MIT License
-
-Copyright (c) {% raw %}{% if license_year_start != 2025 %}{{ license_year_start }}-{% endif %}2025 {{ license_owner }}{% endraw %}
+Copyright (c) {% if license_year_start != 2025 %}{{ license_year_start }}-{% endif %}2025 {{ license_owner }}
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
