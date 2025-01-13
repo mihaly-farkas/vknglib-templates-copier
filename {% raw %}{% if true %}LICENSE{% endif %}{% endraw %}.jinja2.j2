@@ -1,4 +1,4 @@
-{#
+{%  raw %}{#
   The name of the file is tricky.
 
   The
@@ -13,9 +13,9 @@
   However, in this case GitHub would automatically display the LICESE.jinja2 file in the repository licenses,
   but that is not for the current repo, "just" a template for future generated repos.
 
-  So therefore. We get the same result, but we still change the file name in _this_ repository.
+  So get the same result, but we still change the file name in _this_ repository.
 
-#}MIT License
+#}{% endraw %}MIT License
 
 Copyright (c) {% raw %}{% if license_year_start != 2025 %}{{ license_year_start }}-{% endif %}2025 {{ license_owner }}{% endraw %}
 
