@@ -36,5 +36,7 @@ RUN ln -s /usr/local/lib/devops/build.sh /usr/local/bin/build
 RUN ln -s /usr/local/lib/devops/init.sh /usr/local/bin/init
 
 # Define the runtime environment variables
+ENV SERVICE_USER_NAME=""
+ENV SERVICE_USER_EMAIL=""
 ENV SERVICE_USER_PAT=""
 ENV GIT_CHECKOUT_REF="main"
