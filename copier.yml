@@ -1,0 +1,11 @@
+_templates_suffix: .j2
+
+_exclude:
+  # The default _exclude settings minus the copier.yaml
+  # See: https://copier.readthedocs.io/en/stable/configuring/#exclude
+  - "~*"
+  - "*.py[co]"
+  - "__pycache__"
+  - ".git"
+  - ".DS_Store"
+  - ".svn"

@@ -1,0 +1,9 @@
+# Standard ignore rules
+.bak
+.local
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
