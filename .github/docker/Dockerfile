@@ -12,12 +12,10 @@ RUN apt install python3-pip --yes
 ARG GIT_REPO_OWNER=mihaly-farkas
 ARG GIT_REPO_NAME=vknglib-templates-copier
 ARG GIT_REPO_URL=https://github.com/$GIT_REPO_OWNER/$GIT_REPO_NAME.git
-ARG GIT_REPO_SSH=git@github.com:$GIT_REPO_OWNER/$GIT_REPO_NAME.git
 
 # Make the build arguments available as environment variables as well
 ENV GIT_REPO_OWNER=$GIT_REPO_OWNER
 ENV GIT_REPO_NAME=$GIT_REPO_NAME
-ENV GIT_REPO_URL=$GIT_REPO_URL
 
 # Add the github.com to the list of known hosts
 RUN mkdir -p /root/.ssh
@@ -27,7 +25,6 @@ RUN ssh-keyscan github.com >> /root/.ssh/known_hosts
 # Clone the repository
 WORKDIR /workdir
 RUN git clone "$GIT_REPO_URL" . --origin origin-https
-RUN git remote add origin "$GIT_REPO_SSH"
 RUN git remote remove origin-https
 
 # Pre-install the required python packages
@@ -36,10 +33,10 @@ RUN pip3 install --requirement requirements.txt --break-system-packages --root-u
 # Copy the local files to the container's workspace.
 COPY usr/local /usr/local
 RUN ln -s /usr/local/lib/devops/build.sh /usr/local/bin/build
+RUN ln -s /usr/local/lib/devops/init.sh /usr/local/bin/init
 
 # Define the runtime environment variables
 ENV SERVICE_USER_NAME="Mihaly Farkas (bot)"
 ENV SERVICE_USER_EMAIL="194427384+mihaly-farkas-bot@users.noreply.github.com"
-ENV SERVICE_USER_SSH_PRIVAT_KEY_BASE64=""
+ENV SERVICE_USER_PAT=""
 ENV GIT_CHECKOUT_REF="main"
-
