@@ -7,6 +7,7 @@ export NC='\033[0m'
 # Configure the git user
 git config --global user.name "$SERVICE_USER_NAME"
 git config --global user.email "$SERVICE_USER_EMAIL"
+
 echo "$SERVICE_USER_SSH_PRIVAT_KEY_BASE64" | base64 --decode >/root/.ssh/id_ed25519
 chmod 600 /root/.ssh/id_ed25519
 

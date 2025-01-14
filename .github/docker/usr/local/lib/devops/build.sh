@@ -10,6 +10,7 @@ echo -e "${CYAN}Building the ${GREEN}${GIT_REPO_NAME}${CYAN} component...${NC}"
 # Install the Python dependencies
 #######################################################################################################################
 echo -e "${CYAN}Installing the Python dependencies...${NC}"
+
 set -x
 pip3 install \
   --requirement requirements.txt \
