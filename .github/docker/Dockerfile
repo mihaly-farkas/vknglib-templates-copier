@@ -24,8 +24,8 @@ RUN ssh-keyscan github.com >> /root/.ssh/known_hosts
 
 # Clone the repository
 WORKDIR /workdir
-RUN git clone "$GIT_REPO_URL" . --origin origin-https
-RUN git remote remove origin-https
+RUN git clone "$GIT_REPO_URL" . --origin origin-preload
+RUN git remote remove origin-preload
 
 # Pre-install the required python packages
 RUN pip3 install --requirement requirements.txt --break-system-packages --root-user-action=ignore
@@ -36,5 +36,7 @@ RUN ln -s /usr/local/lib/devops/build.sh /usr/local/bin/build
 RUN ln -s /usr/local/lib/devops/init.sh /usr/local/bin/init
 
 # Define the runtime environment variables
+ENV SERVICE_USER_NAME=""
+ENV SERVICE_USER_EMAIL=""
 ENV SERVICE_USER_PAT=""
 ENV GIT_CHECKOUT_REF="main"
