@@ -36,7 +36,5 @@ RUN ln -s /usr/local/lib/devops/build.sh /usr/local/bin/build
 RUN ln -s /usr/local/lib/devops/init.sh /usr/local/bin/init
 
 # Define the runtime environment variables
-ENV SERVICE_USER_NAME="Mihaly Farkas (bot)"
-ENV SERVICE_USER_EMAIL="194427384+mihaly-farkas-bot@users.noreply.github.com"
 ENV SERVICE_USER_PAT=""
 ENV GIT_CHECKOUT_REF="main"
