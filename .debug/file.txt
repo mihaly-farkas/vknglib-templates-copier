@@ -1,1 +1,0 @@
-The plain `file.txt` file.

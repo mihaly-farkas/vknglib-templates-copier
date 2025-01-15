@@ -1,1 +1,0 @@
-The filename described as a Jinja constant with a different value - `{{ 'file-x' }}.txt`.
