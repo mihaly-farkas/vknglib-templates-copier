@@ -1,1 +1,23 @@
 _templates_suffix: .jinja2
+
+_exclude:
+  # The default _exclude settings minus the copier.yaml
+  # See: https://copier.readthedocs.io/en/stable/configuring/#exclude
+  - "copier.yaml"
+  - "copier.yml"
+  - "~*"
+  - "*.py[co]"
+  - "__pycache__"
+  - ".git"
+  - ".DS_Store"
+  - ".svn"
+
+  # Do not copy the CHANGELOG.md file
+  - "CHANGELOG.md"
+
+  # This is for testing of the copier command
+  - ".fixtures"
+
+  # The requirements.txt is for testing of the copier command
+  # We do not need it unless, if we want to set up a Python template.
+  - "requirements.txt"

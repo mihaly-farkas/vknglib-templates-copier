@@ -1,0 +1,3 @@
+# These are the dependencies needed to run the behavior tests of the Copier generation.
+# So, these are for the testing, and not for any operation code.
+copier~=9.4.1

@@ -1,0 +1,38 @@
+name: "Pull Request Verifier"
+on:
+  pull_request:
+    types:
+      - opened
+      - edited
+      - reopened
+      - synchronize
+    branches:
+      - main
+concurrency:
+  group: ${{ github.repository }}-pull-request-verifier-${{ github.ref_name }}
+  cancel-in-progress: true
+jobs:
+  verify:
+    name: "Verify"
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: "Checkout the repository"
+        uses: actions/checkout@v4
+
+      - name: "Setup Python"
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+          cache: "pip"
+
+      - name: "Install dependencies"
+        run: |
+          # Bash script
+          pip install -r requirements.txt
+
+      - name: "Verify"
+        run: |
+          # Bash script
+          .scripts/verify.sh --stop
