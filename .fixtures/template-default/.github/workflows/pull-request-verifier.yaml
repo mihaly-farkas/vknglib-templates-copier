@@ -36,4 +36,31 @@ jobs:
         run: |
           # Bash script
           chmod +x .scripts/verify.sh
-          .scripts/verify.sh --stop
+          .scripts/verify.sh --stop || true
+          
+          echo
+          echo
+          echo
+          
+          echo "* Copier version ******************"
+          copier --version
+          echo
+          echo
+          
+          # echo "* Do the copy **********************"
+          # copier copy --defaults --overwrite .debug .debug-output
+          # echo
+          # echo
+          
+          echo "* .generated/template-default.generated/project-default/.copier-answers.yml ************************"
+          cat .generated/template-default.generated/project-default/.copier-answers.yml 
+          echo
+          echo
+          
+          echo "* .fixtures/template-default/.fixtures/project-default/.copier-answers.yml **********************"
+          cat .fixtures/template-default/.fixtures/project-default/.copier-answers.yml
+          echo
+          echo
+          
+          exit 1
+          

@@ -1,5 +1,7 @@
 _templates_suffix: .j2
 
+_answers_file: ".copier-answers.top-level.yml"
+
 _envops:
   block_end_string: "%]"
   block_start_string: "[%"
@@ -19,3 +21,17 @@ _exclude:
 
   # This is for testing of this level the copier command
   - ".fixtures/template-*"
+
+license_owner:
+  type: str
+  help: The owner of the license
+  default: "Mihaly Farkas"
+
+license_year_start:
+  type: int
+  help: The year the license starts (by default the current year, when the new Copier template is created)
+  default: 2025
+
+template_name:
+  type: str
+  help: The name of the template

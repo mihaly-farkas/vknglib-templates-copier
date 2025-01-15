@@ -12,12 +12,25 @@ _exclude:
   - ".DS_Store"
   - ".svn"
 
+  # Do not copy the .copier-answers.top-level.yml file
+  - ".copier-answers.top-level.yml"
+
   # Do not copy the CHANGELOG.md file
   - "CHANGELOG.md"
 
-  # This is for testing of the copier command
+  # This is only for testing of the copier command
   - ".fixtures"
 
-  # The requirements.txt is for testing of the copier command
+  # The requirements.txt is only for testing of the copier command.
   # We do not need it unless, if we want to set up a Python template.
   - "requirements.txt"
+
+license_owner:
+  type: str
+  help: The owner of the license
+  default: "{{ license_owner }}"
+
+license_year_start:
+  type: int
+  help: The year the license starts (by default the current year, when the new Copier template is created)
+  default: 2025

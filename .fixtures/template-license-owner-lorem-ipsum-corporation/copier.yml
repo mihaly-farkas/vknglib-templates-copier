@@ -1,0 +1,36 @@
+_templates_suffix: .jinja2
+
+_exclude:
+  # The default _exclude settings minus the copier.yaml
+  # See: https://copier.readthedocs.io/en/stable/configuring/#exclude
+  - "copier.yaml"
+  - "copier.yml"
+  - "~*"
+  - "*.py[co]"
+  - "__pycache__"
+  - ".git"
+  - ".DS_Store"
+  - ".svn"
+
+  # Do not copy the .copier-answers.top-level.yml file
+  - ".copier-answers.top-level.yml"
+
+  # Do not copy the CHANGELOG.md file
+  - "CHANGELOG.md"
+
+  # This is only for testing of the copier command
+  - ".fixtures"
+
+  # The requirements.txt is only for testing of the copier command.
+  # We do not need it unless, if we want to set up a Python template.
+  - "requirements.txt"
+
+license_owner:
+  type: str
+  help: The owner of the license
+  default: "Lorem Ipsum Corporation"
+
+license_year_start:
+  type: int
+  help: The year the license starts (by default the current year, when the new Copier template is created)
+  default: 2025
