@@ -33,6 +33,8 @@ jobs:
           
           echo "PWD: $(pwd)"
           
+          printenv
+          
           
           # copier copy \
           #   . \
