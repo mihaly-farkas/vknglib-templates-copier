@@ -1,5 +1,8 @@
 _templates_suffix: .j2
 
+_copier_conf:
+  answers_file: ".copier-answers.top-level.yml"
+
 _envops:
   block_end_string: "%]"
   block_start_string: "[%"
