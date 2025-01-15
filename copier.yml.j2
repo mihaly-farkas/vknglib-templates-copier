@@ -12,19 +12,17 @@ _exclude:
   - ".DS_Store"
   - ".svn"
 
-  # Do not copy the .copier-answers.yml file
-  #
-  # This is a "middle" level template so, it has a .copier-answers.yml and it required to generate one.
-  # In some contexts - e.g. the GitHub Action's runner with Ubuntu - it causes some issues.
+  # Do not copy the .copier-answers.top-level.yml file
   - ".copier-answers.top-level.yml"
 
   # Do not copy the CHANGELOG.md file
   - "CHANGELOG.md"
 
-  # This is for testing of the copier command
+  # This is only for testing of the copier command
   - ".fixtures"
 
-  # The requirements.txt is for testing of the copier command
+  # The requirements.txt is only for testing of the copier command
+  #
   # We do not need it unless, if we want to set up a Python template.
   - "requirements.txt"
 
