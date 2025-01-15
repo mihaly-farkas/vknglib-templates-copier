@@ -1,6 +1,5 @@
 # Standard ignore rules
 .bak
-.generated
 .local
 
 # IntelliJ project files

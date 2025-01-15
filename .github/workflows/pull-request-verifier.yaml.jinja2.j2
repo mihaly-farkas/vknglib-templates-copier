@@ -9,7 +9,7 @@ on:
     branches:
       - main
 concurrency:
-  group: ${{ github.repository }}-pull-request-verifier-${{ github.ref_name }}
+  group: [% raw %]{% raw %}${{ github.repository }}-pull-request-verifier-${{ github.ref_name }}{% endraw %}[% endraw %]
   cancel-in-progress: true
 jobs:
   verify:
@@ -21,14 +21,4 @@ jobs:
       - name: "Checkout the repository"
         uses: actions/checkout@v4
 
-      - name: "Setup Python"
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.10'
-          cache: 'pip'
-
-      - name: "Verify"
-        run: |
-          # Bash script
-          
-          # copier copy . .generated/template-default --defaults --force --overwrite
+     # TODO Implement the verification logic here

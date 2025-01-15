@@ -1,5 +1,9 @@
 _templates_suffix: .j2
 
+_envops:
+  block_end_string: "%]"
+  block_start_string: "[%"
+
 _exclude:
   # The default _exclude settings minus the copier.yaml
   # See: https://copier.readthedocs.io/en/stable/configuring/#exclude
@@ -9,3 +13,6 @@ _exclude:
   - ".git"
   - ".DS_Store"
   - ".svn"
+
+  # Do not copy the CHANGELOG.md file
+  - "CHANGELOG.md"
