@@ -49,3 +49,9 @@ jobs:
 
           echo "* file-x.txt **********************"
           cat .debug-output/file-x.txt
+          
+          echo
+          echo
+          echo
+          
+          
