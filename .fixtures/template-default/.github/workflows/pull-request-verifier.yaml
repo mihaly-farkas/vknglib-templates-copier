@@ -41,15 +41,18 @@ jobs:
           echo
           echo
           echo
+          
           echo "* Copier version ******************"
           copier --version
+          
           # echo "* Do the copy **********************"
           # copier copy --defaults --overwrite .debug .debug-output
-          echo "* .generated/template-default/copier.yml ************************"
-          cat .generated/template-default/copier.yml
+          
           echo "* .generated/template-default.generated/project-default/.copier-answers.yml ************************"
           cat .generated/template-default.generated/project-default/.copier-answers.yml 
+          
           echo "* .fixtures/template-default/.fixtures/project-default/.copier-answers.yml **********************"
           cat .fixtures/template-default/.fixtures/project-default/.copier-answers.yml
+          
           exit 1
           
