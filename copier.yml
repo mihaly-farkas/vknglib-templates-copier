@@ -16,3 +16,6 @@ _exclude:
 
   # Do not copy the CHANGELOG.md file
   - "CHANGELOG.md"
+
+  # This is for testing of this level the copier command
+  - ".fixtures/template-*"
