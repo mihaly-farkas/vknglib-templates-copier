@@ -35,23 +35,18 @@ jobs:
       - name: "Verify"
         run: |
           # Bash script
-          # chmod +x .scripts/verify.sh
-          # .scripts/verify.sh --stop
           
-          echo "* Copier version ******************"
-          copier --version
-
-          echo "* Do the copy **********************"
-          copier copy --defaults --overwrite .debug .debug-output
-
-          echo "* file.txt ************************"
-          cat .debug-output/file.txt
-
-          echo "* file-x.txt **********************"
-          cat .debug-output/file-x.txt
+          # echo "* Copier version ******************"
+          # copier --version
+          # echo "* Do the copy **********************"
+          # copier copy --defaults --overwrite .debug .debug-output
+          # echo "* file.txt ************************"
+          # cat .debug-output/file.txt
+          # echo "* file-x.txt **********************"
+          # cat .debug-output/file-x.txt
+          # echo
+          # echo
+          # echo
           
-          echo
-          echo
-          echo
-          
-          
+          chmod +x .scripts/verify.sh
+          .scripts/verify.sh --stop
