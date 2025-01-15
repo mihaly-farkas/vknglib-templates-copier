@@ -14,7 +14,7 @@ concurrency:
 jobs:
   verify:
     name: "Verify"
-    runs-on: ubuntu:24.10
+    runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
@@ -35,5 +35,17 @@ jobs:
       - name: "Verify"
         run: |
           # Bash script
-          chmod +x .scripts/verify.sh
-          .scripts/verify.sh --stop
+          # chmod +x .scripts/verify.sh
+          # .scripts/verify.sh --stop
+          
+          echo "* Copier version ******************"
+          copier --version
+
+          echo "* Do the copy **********************"
+          copier copy --defaults --overwrite .debug .debug-output
+
+          echo "* file.txt ************************"
+          cat .debug-output/file.txt
+
+          echo "* file-x.txt **********************"
+          cat .debug-output/file-x.txt

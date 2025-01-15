@@ -26,7 +26,6 @@ function copy() {
   set -x
   copier copy "$SOURCE" "$DEST" \
     --defaults \
-    --force \
     --overwrite \
     --vcs-ref=@latest \
     "$@"
