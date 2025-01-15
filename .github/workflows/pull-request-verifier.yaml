@@ -35,4 +35,5 @@ jobs:
       - name: "Verify"
         run: |
           # Bash script
+          chmod +x .scripts/verify.sh
           .scripts/verify.sh --stop
