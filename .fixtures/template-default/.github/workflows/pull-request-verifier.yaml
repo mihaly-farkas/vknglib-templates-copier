@@ -30,5 +30,4 @@ jobs:
       - name: "Verify"
         run: |
           # Bash script
-          
-          # copier copy . .generated/template-default --defaults --force --overwrite
+          .scripts/verify.sh --stop
