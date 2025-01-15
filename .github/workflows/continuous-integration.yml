@@ -1,0 +1,22 @@
+name: "Continuous Integration"
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+concurrency:
+  group: ${{ github.repository }}-continuous-integration
+jobs:
+  continuous-integration:
+    name: "Continuous Integration"
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: "Release Please!"
+        uses: googleapis/release-please-action@v4
+        id: release-please
+        with:
+          token: ${{ secrets.SERVICE_USER_CI_TOKEN }}
+          target-branch: ${{ github.ref_name }}
